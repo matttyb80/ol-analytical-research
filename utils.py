@@ -28,3 +28,14 @@ def get_permission_tree(account_list):
         # print(response.json())
 
     return genesis_dict
+
+def get_epoch():
+    """
+    get current epoch
+    """
+    web_address = "https://0l.interblockcha.in:444/epochs"
+
+    response = requests.get(web_address)
+    epochs = response.json()
+
+    return epochs
